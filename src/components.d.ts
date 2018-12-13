@@ -12,40 +12,36 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    'first': string;
-    'last': string;
-    'middle': string;
+  interface UcSideDrawer {
+    'title': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    'first'?: string;
-    'last'?: string;
-    'middle'?: string;
+  interface UcSideDrawerAttributes extends StencilHTMLAttributes {
+    'title'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'UcSideDrawer': Components.UcSideDrawer;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'uc-side-drawer': Components.UcSideDrawerAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {}
+  var HTMLUcSideDrawerElement: {
+    prototype: HTMLUcSideDrawerElement;
+    new (): HTMLUcSideDrawerElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'uc-side-drawer': HTMLUcSideDrawerElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'uc-side-drawer': HTMLUcSideDrawerElement;
   }
 
 

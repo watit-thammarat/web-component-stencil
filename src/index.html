@@ -10,9 +10,14 @@
     <script src="/build/mycomponent.js"></script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
+    <uc-side-drawer title="Main Menu"></uc-side-drawer>
+
+    <script>
+      const element = document.querySelector('uc-side-drawer');
+      setTimeout(() => {
+        element.title = 'It changed';
+        // element.setAttribute('title', 'It changed');
+      }, 3000);
+    </script>
   </body>
 </html>
