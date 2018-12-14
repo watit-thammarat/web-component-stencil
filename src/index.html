@@ -8,16 +8,47 @@
     />
     <title>Stencil Component Starter</title>
     <script src="/build/mycomponent.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #000;
+      }
+    </style>
   </head>
   <body>
-    <uc-side-drawer title="Main Menu"></uc-side-drawer>
+    <button id="side-drawer-btn">Open Side Menu</button>
+    <uc-side-drawer title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">First link</a></li>
+          <li><a href="/">Second link</a></li>
+          <li><a href="/">Third link</a></li>
+        </ul>
+      </nav>
+    </uc-side-drawer>
 
     <script>
-      const element = document.querySelector('uc-side-drawer');
-      setTimeout(() => {
-        element.title = 'It changed';
-        // element.setAttribute('title', 'It changed');
-      }, 3000);
+      const sideDrawer = document.querySelector('uc-side-drawer');
+      const button = document.querySelector('#side-drawer-btn');
+
+      button.addEventListener('click', () => {
+        if (!sideDrawer.opened) {
+          console.log('Opening side drawer');
+          sideDrawer.open();
+        }
+      });
     </script>
   </body>
 </html>
